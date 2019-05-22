@@ -1,0 +1,11 @@
+<main class='main-container'>
+  <section class='widget'>
+    <p class='title' [ngStyle]='{"color":wasClaimed?"#00a49c":"#252525"}'>{{ message }}</p>
+    <p *ngIf='!wasClaimed' class='content'>00:{{ counter }}</p>
+    <button
+      [disabled]='counter===0' [ngClass]='!wasClaimed?"btn":"btn-clicked"'
+      (click)='onClaim()'>{{ !wasClaimed ? btnText : '' }}
+      <img *ngIf='wasClaimed' src='../assets/icon-tick.svg' alt='check mark'>
+    </button>
+  </section>
+</main>
